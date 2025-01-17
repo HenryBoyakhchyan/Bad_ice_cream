@@ -17,16 +17,20 @@ if __name__ == "__main__":
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP:
                     action = UP
+                    observation, reward, done, _, _ = env.step(action)
                 elif event.key == pygame.K_DOWN:
                     action = DOWN
+                    observation, reward, done, _, _ = env.step(action)
                 elif event.key == pygame.K_LEFT:
                     action = LEFT
+                    observation, reward, done, _, _ = env.step(action)
                 elif event.key == pygame.K_RIGHT:
                     action = RIGHT
+                    observation, reward, done, _, _ = env.step(action)
                 elif event.key == pygame.K_SPACE:  # Space to create block
                     action = CREATE_BLOCK
-                observation, reward, done, _ = env.step(action)
+                    observation, reward, done, _, _ = env.step(action)
 
-                env.render()  # Render the updated game state
+            env.render()  # Render the updated game state
 
     pygame.quit()  # Quit Pygame when the loop ends
